@@ -1,0 +1,38 @@
+{
+  "name": "node-pre-gyp-tests",
+  "version": "0.0.1",
+  "description": "node-pre-gyp-tests",
+  "main": "./index.js",
+  "author": "fleg",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/fleg/node-pre-gyp-tests.git"
+  },
+  "binary": {
+    "module_name": "TestPackage",
+    "module_path": "./lib/binding/{configuration}/{node_abi}-{platform}-{arch}/",
+    "remote_path": "./{module_name}/",
+    "package_name": "{module_name}-v{version}-{node_abi}-{platform}-{arch}.tar.gz",
+    "host": "https://flegdev.ru/node-pre-gyp-tests"
+  },
+  "dependencies": {
+    "node-pre-gyp": "^0.6.13"
+  },
+  "bundleDependencies": [
+    "node-pre-gyp"
+  ],
+  "devDependencies": {
+    "nan": "^2.1.0",
+    "node-gyp": "^3.0.3",
+    "nw-gyp": "^0.12.4"
+  },
+  "scripts": {
+    "install": "node-pre-gyp install --fallback-to-build",
+    "test": "node index.js"
+  },
+  "bugs": {
+    "url": "https://github.com/fleg/node-pre-gyp-tests/issues"
+  },
+  "homepage": "https://github.com/fleg/node-pre-gyp-tests#readme",
+  "license": "MIT"
+}
